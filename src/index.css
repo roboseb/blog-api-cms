@@ -1,13 +1,67 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+    --backdrop:
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+    margin: 0;
+    color: white;
+
+    font-family: sans-serif;
+}
+
+#app {
+    height: 100vh;
+    width: 100vw;
+
+    background-color: rgb(44, 44, 44);
+
+    display: flex;
+    flex-direction: column;
+
+    position: relative;
+}
+
+#main-content {
+    box-sizing: border-box;
+    padding: 10px;
+    flex-grow: 1;
+
+    display: flex;
+    flex-direction: column;
+}
+
+#navbar {
+    background-color: hotpink;
+    color: black;
+    padding: 5px;
+}
+
+#postlist {
+    background-color: rgba(0, 0, 255, 0.192);
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    flex-grow: 1;
+}
+
+.post {
+    padding: 5px;
+    background-color: rgb(29, 29, 29);
+}
+
+#expanded-post {
+    background-color: rgb(29, 29, 29);
+    padding: 5px;
+
+}
+
+#comment-form {
+    background-color: blue;
+}
+
+.comment {
+    background-color: burlywood;
+    color: black;
 }
