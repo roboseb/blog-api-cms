@@ -5,7 +5,7 @@ function NewPost(props) {
         const title = document.getElementById('title').value;
         const content = document.getElementById('content').value;
 
-        fetch("/api/posts/new", {
+        fetch("https://vast-brushlands-96580.herokuapp.com/api/posts/new", {
             method: "POST",
             headers: {
                 Accept: "application/json",
@@ -30,23 +30,28 @@ function NewPost(props) {
         <div id="post-form">
 
             {props.user ?
-                <div id='post-form'>
-                    <h2>New Post</h2>
+                props.user.admin ?
+                    <div id='post-form'>
+                        <h2>New Post</h2>
 
-                    <label htmlFor='title'> Title </label>
-                    <input id='title' name='title'></input>
+                        <label htmlFor='title'> Title </label>
+                        <input id='title' name='title'></input>
 
-                    <label htmlFor='content'> Content </label>
-                    <input id='content' name='content'></input>
+                        <label htmlFor='content'> Content </label>
+                        <input id='content' name='content'></input>
 
-                    <button type='submit' onClick={sendNewPost}> Submit </button>
-                </div>
+                        <button type='submit' onClick={sendNewPost}> Submit </button>
+                    </div>
+
+                    : <div>
+                        Must be admin to post.
+                    </div>
+
                 :
 
                 <div>
                     Please sign in to post.
                 </div>
-
             }
 
 

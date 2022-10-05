@@ -7,10 +7,7 @@ function SignIn(props) {
         const username = document.getElementById('username').value;
         const password = document.getElementById('password').value;
 
-
-        console.log('signing in...');
-
-        fetch("/api/sign-in", {
+        fetch("https://vast-brushlands-96580.herokuapp.com/api/sign-in", {
             method: "POST",
             headers: {
                 Accept: "application/json",
@@ -39,7 +36,7 @@ function SignIn(props) {
                 <input id='username' name='username' required></input>
 
                 <label htmlFor='password'>Password</label>
-                <input id='password' name='password' required></input>
+                <input type='password' id='password' name='password' required></input>
 
                 <button type='submit' onClick={signInUser} >Submit</button>
 
